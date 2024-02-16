@@ -34,7 +34,7 @@
 #define TF_TRANSFORMBROADCASTER_H
 
 #include "tf/tf.h"
-#include "tf/tfMessage.h"
+#include "tf_msgs/Message.h"
 
 #include <tf2_ros/transform_broadcaster.h>
 
