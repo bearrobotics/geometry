@@ -167,13 +167,13 @@ int main(int argc, char** argv)
   tf::TransformListener tfl(node);
 
   // Advertise the service
-  ros::Publisher pub = node.advertise<tf::tfMessage>("tf_changes", 1, true);
+  ros::Publisher pub = node.advertise<tf_msgs::tfMessage>("tf_changes", 1, true);
 
   while (node.ok())
   {
     try
     {
-      tf::tfMessage msg;
+      tf_msgs::tfMessage msg;
 
       for (std::vector<FramePair>::iterator i = frame_pairs.begin(); i != frame_pairs.end(); i++)
       {

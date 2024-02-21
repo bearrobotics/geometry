@@ -60,25 +60,25 @@ public:
   
   TransformListener tf_;
 
-  tf::tfMessage message_;
+  tf_msgs::tfMessage message_;
 
   boost::mutex map_lock_;
-  void callback(const ros::MessageEvent<tf::tfMessage const>& msg_evt)
+  void callback(const ros::MessageEvent<tf_msgs::tfMessage const>& msg_evt)
   {
-    const tf::tfMessage& message = *(msg_evt.getConstMessage());
+    const tf_msgs::tfMessage& message = *(msg_evt.getConstMessage());
     std::string authority = msg_evt.getPublisherName(); // lookup the authority 
     process_callback(message, authority, false);
   }
   
-  void static_callback(const ros::MessageEvent<tf::tfMessage const>& msg_evt)
+  void static_callback(const ros::MessageEvent<tf_msgs::tfMessage const>& msg_evt)
   {
-    const tf::tfMessage& message = *(msg_evt.getConstMessage());
+    const tf_msgs::tfMessage& message = *(msg_evt.getConstMessage());
     std::string authority = msg_evt.getPublisherName() + std::string("(static)"); // lookup the authority 
     process_callback(message, authority, true);
   }
 
 
-  void process_callback(const tf::tfMessage& message, const std::string & authority, bool is_static)
+  void process_callback(const tf_msgs::tfMessage& message, const std::string & authority, bool is_static)
   {
     double average_offset = 0;
     boost::mutex::scoped_lock my_lock(map_lock_);
@@ -168,8 +168,8 @@ public:
       }
       cout <<endl;*/
     }
-    subscriber_tf_ = node_.subscribe<tf::tfMessage>("tf", 100, boost::bind(&TFMonitor::callback, this, _1));
-    subscriber_tf_static_ = node_.subscribe<tf::tfMessage>("tf_static", 100, boost::bind(&TFMonitor::static_callback, this, _1));
+    subscriber_tf_ = node_.subscribe<tf_msgs::tfMessage>("tf", 100, boost::bind(&TFMonitor::callback, this, _1));
+    subscriber_tf_static_ = node_.subscribe<tf_msgs::tfMessage>("tf_static", 100, boost::bind(&TFMonitor::static_callback, this, _1));
     
   }
 
