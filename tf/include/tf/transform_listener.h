@@ -40,7 +40,7 @@
 #include "ros/callback_queue.h"
 #include "ros/macros.h"
 
-#include "tf/FrameGraph.h" //frame graph service
+#include "tf_msgs/FrameGraph.h" //frame graph service
 #include "boost/thread.hpp"
 
 #include <tf2_ros/transform_listener.h>
