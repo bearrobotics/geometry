@@ -34,13 +34,13 @@
 
 #include "sensor_msgs/PointCloud.h"
 #include "std_msgs/Empty.h"
-#include "tf_msgs/tfMessage.h"
+#include "tf/tfMessage.h"
 #include "tf/tf.h"
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/macros.h"
 
-#include "tf_msgs/FrameGraph.h" //frame graph service
+#include "tf/FrameGraph.h" //frame graph service
 #include "boost/thread.hpp"
 
 #include <tf2_ros/transform_listener.h>
@@ -145,7 +145,7 @@ public:
 
     ///\todo move to high precision laser projector class  void projectAndTransformLaserScan(const sensor_msgs::LaserScan& scan_in, sensor_msgs::PointCloud& pcout);
 
-  bool getFrames(tf_msgs::FrameGraph::Request&, tf_msgs::FrameGraph::Response& res)
+  bool getFrames(tf::FrameGraph::Request&, tf::FrameGraph::Response& res)
   {
     res.dot_graph = allFramesAsDot();
     return true;
