@@ -32,7 +32,7 @@
 #ifndef CONVERSIONS_KDL_MSG_H
 #define CONVERSIONS_KDL_MSG_H
 
-#include "orocos_kdl/frames.hpp"
+#include "frames.hpp"
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Quaternion.h>
