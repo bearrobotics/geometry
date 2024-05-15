@@ -32,7 +32,7 @@
 
 #include "kdl_conversions/kdl_msg.h" //backwards compatability for deprecated methods
 #include "tf/transform_datatypes.h"
-#include "kdl/frames.hpp"
+#include "frames.hpp"
 
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Twist.h>
