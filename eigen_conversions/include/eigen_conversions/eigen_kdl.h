@@ -37,7 +37,7 @@
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
-#include <kdl/frames.hpp>
+#include <frames.hpp>
 
 namespace tf {
 
